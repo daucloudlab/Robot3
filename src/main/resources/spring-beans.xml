@@ -5,12 +5,23 @@
 
     <bean id = "sonyHand" class="kz.kazntu.lessons.models.sony.SonyHand"/>
     <bean id = "sonyHead" class="kz.kazntu.lessons.models.sony.SonyHead" />
+    <bean id = "sonyLeg" class="kz.kazntu.lessons.models.sony.SonyLeg" />
     <bean id = "toshibaLeg" class="kz.kazntu.lessons.models.toshiba.ToshibaLeg" />
 
     <bean id = "robot" class="kz.kazntu.lessons.models.Robot">
         <constructor-arg name="hand" ref = "sonyHand"/>
         <constructor-arg name="head" ref = "sonyHead" />
         <constructor-arg name = "leg" ref = "toshibaLeg" />
+    </bean>
+
+    <bean id = "robot2" class="kz.kazntu.lessons.models.Robot">
+        <property name="hand" ref="sonyHand" />
+        <property name="head">
+            <ref bean="sonyHead" />
+        </property>
+        <property name="leg">
+            <ref bean="sonyLeg" />
+        </property>
     </bean>
 
 
